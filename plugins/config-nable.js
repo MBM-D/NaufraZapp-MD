@@ -41,6 +41,14 @@ if (!(isAdmin || isOwner)) {
 global.dfail('admin', m, conn)
 throw false
 }}
+case 'antisubbots':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiExoticobot = isEnable
+break
 chat.simi = isEnable
 break
 case 'detect':
@@ -216,6 +224,78 @@ throw false
 }
 bot.modejadibot = isEnable
 break     
+case 'antitiktok': case 'antitk': case 'antitik':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiTiktok = isEnable 
+break		
+case 'antiyoutube': case 'antiyt':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiYoutube = isEnable 
+break		
+case 'antitelegram': case 'antitl': case 'antitele': case 'antitg': case 'antitel':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiTelegram = isEnable 
+break		
+case 'antifacebook': case 'antifb': case 'antifbook':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiFacebook = isEnable 
+break		
+case 'antiinstagram': case 'antinstagram': case 'antiig': case 'antig': case 'antiinsta': case 'antinsta':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiInstagram = isEnable 
+break		
+case 'antitwitter': case 'antitw': case 'antitwit': case 'antitwter': case 'antitwiter': case 'antix':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiTwitter = isEnable 
+break
+case 'antidiscord':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiDiscord = isEnable 
+break
+case 'antithreads':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiThreads = isEnable 
+break
+case 'antitwitch':
+if (m.isGroup) {
+if (!(isAdmin || isOwner)) {
+global.dfail('admin', m, conn)
+throw false
+}}
+chat.antiTwitch = isEnable 
+break
 case 'nyimak':
 case 'naufrabot':
 isAll = true
@@ -421,10 +501,46 @@ _#on *sologrupos*_
 _#off *autoleer*_
 _#on *autoleer*_
 •────────────────•
-> NaufraZapp-Beta`, m, fake, )
+•⊰『 ANTI TIKTOK 』⊱•
+_#off *antitiktok*_
+_#on *antitiktok*_
+•────────────────•
+•⊰『 ANTI YOUTUBE 』⊱•
+_#off *antiyoutube*_
+_#on *antiyoutube*_
+•────────────────•
+•⊰『 ANTI TELEGRAM 』⊱•
+_#off *antitelegram*_
+_#on *antitelegram*_
+•────────────────•
+•⊰『 ANTI GITHUB 』⊱•
+_#off *antigithub*_
+_#on *antigithub*_
+•────────────────•
+•⊰『 ANTI TWITTER 』⊱•
+_#off *antitwitter*_
+_#on *antitwitter*_
+•────────────────•
+•⊰『 ANTI DISCORD 』⊱•
+_#off *antidiscord*_
+_#on *antidiscord*_
+•────────────────•
+•⊰『 ANTI FACEBOOK 』⊱•
+_#off *antifacebook*_
+_#on *antifacebook*_
+•────────────────•
+•⊰『 ANTI INSTAGRAM 』⊱•
+_#off *antinstagram*_
+_#on *antinstagram*_
+•────────────────•
+•⊰『 ANTI SUB BOTS 』⊱•
+_#off *antisubbots*_
+_#on *antisubbots*_
+•────────────────•
+> NaufraZapp-Beta`, fkontak, m )
 throw false
 }
-conn.reply(m.chat, `┏•════════════════•\n${isEnable ? '┃『❇️』' : '┃『✅』'} COMANDO: ${type}\n┃『⚙️』ESTADO: ${isEnable ? '*Activado*' : '*Desactivado*'}\n┃『💾』PARA: ${isAll ? '*Este bot.*' : isUser ? '' : '*Este chat.*'}\n┗•════════════════•`, m, fake, )
+conn.reply(m.chat, `┏•════════════════•\n${isEnable ? '┃『❇️』' : '┃『✅』'} COMANDO: ${type}\n┃『⚙️』ESTADO: ${isEnable ? '*Activado*' : '*Desactivado*'}\n┃『💾』PARA: ${isAll ? '*Este bot.*' : isUser ? '' : '*Este chat.*'}\n┗•════════════════•`, fkontak, m)
 
 }
 handler.help = ['en', 'dis'].map(v => v + 'able')
