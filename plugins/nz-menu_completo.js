@@ -1,22 +1,44 @@
-import fs, { promises } from 'fs'
-import fetch from 'node-fetch'
-let handler = async (m, { conn, usedPrefix, command }) => {
-try {
-let d = new Date(new Date + 3600000)
-let locale = 'es'
-let week = d.toLocaleDateString(locale, { weekday: 'long' })
-let date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
+let handler = async (m, { conn, command, usedPrefix }) => {
+let pp = imagenRB
+let name = await conn.getName(m.sender)
 let _uptime = process.uptime() * 1000
+let _muptime
+let { exp, limit, level, role } = global.db.data.users[m.sender]
+let { min, xp, max } = xpRange(level, global.multiplier)
+let { money, joincount } = global.db.data.users[m.sender]
+let muptime = clockString(_muptime)
 let uptime = clockString(_uptime)
-let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length 
-let more = String.fromCharCode(8206)
-let readMore = more.repeat(850)   
-let taguser = conn.getName(m.sender)
-let user = global.db.data.users[m.sender]
-let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
-let menu = `╭─────────────────···•⊰ ⋆
+let totalreg = Object.keys(global.db.data.users).length
+let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
+let replace = {
+'%': '%',
+p: _p, uptime, muptime,
+me: conn.getName(conn.user.jid),
+npmname: _package.name,
+npmdesc: _package.description,
+version: _package.version,
+exp: exp - min,
+maxexp: xp,
+totalexp: exp,
+xp4levelup: max - exp,
+github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
+level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+readmore: readMore
+}
+text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
+let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+let mentionedJid = [who]
+let username = conn.getName(who)
+let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
+if (process.send) { process.send('uptime')
+_muptime = await new Promise(resolve => { process.once('message', resolve) 
+setTimeout(resolve, 1000) }) * 1000}
+let uptime = clockString(_uptime)
+const more = String.fromCharCode(8206);
+const readMore = more.repeat(850);
+let naufrago = `╭─────────────────···•⊰ ⋆
 │👋🏻 Hola ${taguser}
-│soy NaufraZapp-MD
+│soy ✖️NaufraZapp-MD✖️
 │•────────────────···•⊰
 │Fecha: ${date}
 │Tiempo activo: ${uptime}
@@ -25,25 +47,17 @@ let menu = `╭─────────────────···•⊰ �
 • https://youtube.com/@user-bw5wl4ye8r?si=qN8bP4ZdKm3yXwbx
 
 • https://whatsapp.com/channel/0029VaRibRvDuMRj6ozMSN1l
-${readMore}
-╭• •꒰─•🗒️·𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝘾𝙄𝙊𝙉ٜ۬･
-│•┐ _${usedPrefix}estado_
-┃•│ _${usedPrefix}nzgrupos_
-┃•│ _${usedPrefix}tipobot_
-┃•│ _${usedPrefix}on : off_
-┃•┘ _${usedPrefix}perfil_
-╰• •───• •───• •───•
+╭•┈┈┈┈┈┈• ─ ─ ─ ─ ─ • ┄ •
+│• 🗿 \`𝗥𝗘𝗖𝗨𝗥𝗦𝗢𝗦\` 🗿 •
+│
+│•╮💎 ᴅɪᴀᴍᴀɴᴛᴇs : *${limit}*
+│•┊🪙 ɴᴀᴜғʀᴀᴄᴏɪɴs : *${money}*
+│•┊⚡ ᴇxᴘ : *${exp}*
+│•┊👑 ʀᴀɴɢᴏ : *${role}*
+│•╯👤 ɴɪᴠᴇʟ : *${level}*
+╰•┈┈┈┈┈┈• ─ ─ ─ ─ ─ • ┄ •
 
-╭• •꒰─•🤖·𝙎𝙀𝙍𝘽𝙊𝙏 : 𝙉𝙕ٜ۬･
-│•┐ _${usedPrefix}serbot_
-┃•│ _${usedPrefix}borrarsesion_
-┃•│ _${usedPrefix}stop_
-┃•│ _${usedPrefix}bcbots_
-┃•│ _${usedPrefix}ds_
-┃•┘ _${usedPrefix}bots_
-╰• •───• •───• •───•
-
-╭• •꒰─•⭐·𝙀𝘾𝙊𝙉𝙊𝙈𝙄𝘼 : 𝙍𝙋𝙂ٜ۬･
+╭• •꒰─•⭐·𝙀𝘾𝙊𝙉𝙊𝙈𝙄𝘼 : 𝙍𝙋𝙂۬⭐ٜ･
 │•┐ _${usedPrefix}cofre_
 ┃•│ _${usedPrefix}levelup_
 ┃•│ _${usedPrefix}robar_
@@ -55,109 +69,180 @@ ${readMore}
 ┃•┘ _${usedPrefix}work_
 ╰• •───• •───• •───•
 
-╭• •꒰─•🎰·𝙅𝙐𝙀𝙂𝙊𝙎ٜ۬･
-│•┐ _${usedPrefix}acertijo_
-┃•│ _${usedPrefix}tictactoe_
-│•┘ _${usedPrefix}delttt_
+┍━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+│•꒰─•🗒️·𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝘾𝙄𝙊𝙉ٜ۬🗒️･
+┕━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+┌• ${usedPrefix}estado
+└•⌕ *ver estado del bot*
+┌• ${usedPrefix}nzgrupos
+└•⌕ *ver grupos oficiales*
+┌• ${usedPrefix}tipobot
+└•⌕ *información del bot*
+┌• ${usedPrefix}on / off
+└•⌕ *muestra las funciones.*
+┌• ${usedPrefix}perfil
+└•⌕ *información de tu perfil*
+
+┍━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+│•꒰─•🤖·𝙎𝙀𝙍𝘽𝙊𝙏 : 𝙉𝙕ٜ۬🤖･
+┕━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+┌• ${usedPrefix}serbot
+└•⌕ *Registra con código de 8 dígitos*
+┌• ${usedPrefix}borrarsesion_
+└•⌕ *borra todos los sub bots*
+┌• ${usedPrefix}stop
+└•⌕ *apagar mi sub bot*
+┌• ${usedPrefix}bcbots
+└•⌕ *mensaje para todos los subbots*
+┌• ${usedPrefix}ds_
+└•⌕ *Registra con código de 8 dígitos*
+┌• ${usedPrefix}bots
+└•⌕ *ver sub bots*
 ╰• •───• •───• •───•
 
-╭• •꒰─•🌎·𝙈𝙀𝙉𝙐𝙎ٜ۬･
-│•┐ _${usedPrefix}menu_
-┃•│ _${usedPrefix}menu18_
-│•┘ _${usedPrefix}menuaudios_
+┍━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+│.      •꒰─•🎰·𝙅𝙐𝙀𝙂𝙊𝙎ٜ۬🎰･
+┕━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+┌• ${usedPrefix}acertijo
+└•⌕ *Acertijo.*
+┌• ${usedPrefix}tictactoe
+└•⌕ *Tictactoe*
+┌• ${usedPrefix}delttt
+└•⌕ *delttt*
+
+┍━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+│.      •꒰─•🌎·𝙈𝙀𝙉𝙐𝙎ٜ۬🌎･
+┕━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+┌• ${usedPrefix}menu
+└•⌕ *Menu principal*
+┌• ${usedPrefix}menu18
+└•⌕ *Menu para adultos*
+┌• ${usedPrefix}menuaudios
+└•⌕ *menu audios*
+
+┍━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+│•꒰─•🧰·𝙃𝙀𝙍𝙍𝘼𝙈𝙄𝙀𝙉𝙏𝘼𝙎ٜ۬🧰･
+┕━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+┌• ${usedPrefix}chatgpt
+└•⌕ *texto*
+┌• ${usedPrefix}chatgptvoz
+└•⌕ *texto*
+┌• ${usedPrefix}delchatgpt
+└•⌕ *elimina sesión gpt*
+┌• ${usedPrefix}hd
+└•⌕ *imagen*
+┌• ${usedPrefix}traducir
+└•⌕ *mensaje traducido*
+┌• ${usedPrefix}toimg
+└•⌕ *Responde a sticker.*
+┌• ${usedPrefix}tourl
+└•⌕ *Guardar sticker.*
+┌• ${usedPrefix}sticker
+└•⌕ *Imagen o video*
+
+┍━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+│「⬇️ִֶָ 𖥔 ࣪˖𝑫𝒆𝒔𝒄𝒂𝒓𝒈𝒂𝒔ִֶָ 𖥔 ࣪˖⬇️」
+┕━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+┌• ${usedPrefix}fb
+└•⌕ *enlace*
+┌• ${usedPrefix}apk
+└•⌕ *nombre*
+┌• ${usedPrefix}mediafire
+└•⌕ *enlace*
+┌• ${usedPrefix}ig
+└•⌕ *enlace*
+┌• ${usedPrefix}tiktok
+└•⌕ *enlace*
+┌• ${usedPrefix}twitter
+└•⌕ *enlace*
+┌• ${usedPrefix}pinterest
+└•⌕ *texto*
+┌• ${usedPrefix}mega
+└•⌕ *enlace*
+┌• ${usedPrefix}gitclone
+└•⌕ *enlace*
+┌• ${usedPrefix}playdoc2
+└•⌕ *enlace • texto*
+┌• ${usedPrefix}playdoc
+└•⌕ *enlace • texto*
+┌• ${usedPrefix}quemusica
+└•⌕ *enlace • texto*
+┌• ${usedPrefix}play
+└•⌕ *enlace • texto*
+┌• ${usedPrefix}play2
+└•⌕ *enlace • texto*
+┌• ${usedPrefix}dlav
+└•⌕ *enlace • texto*
+
+┍━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+│•꒰─•👥·𝙋𝘼𝙍𝘼 𝙂𝙍𝙐𝙋𝙊𝙎ٜ۬👥･
+┕━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+┌• ${usedPrefix}admins
+└•⌕ *llamar a los admins*
+┌• ${usedPrefix}add
+└•⌕ *numero +54xxxxxxx*
+┌• ${usedPrefix}grupo
+└•⌕ *abrir : cerrar*
+┌• ${usedPrefix}demote
+└•⌕ *quitar admin*
+┌• ${usedPrefix}promote
+└•⌕ *dar admin*
+┌• ${usedPrefix}ban
+└•⌕ *@tag*
+┌• ${usedPrefix}link
+└•⌕ *mostrar enlace*
+┌• ${usedPrefix}resetlink
+└•⌕ *cambiar link grupal*
+┌• ${usedPrefix}tagall
+└•⌕ *mensionar a todos*
+┌• ${usedPrefix}fantasmas
+└•⌕ *ver inactivos*
+┌• ${usedPrefix}kickfantasmas
+└•⌕ *eliminar inactivos*
+┌• ${usedPrefix}hidetag
+└•⌕ *mensionar con mensaje*
+┌• ${usedPrefix}setwelcome
+└•⌕ *texto*
+┌• ${usedPrefix}setbye
+└•⌕ *texto*
+┌• ${usedPrefix}setdesc
+└•⌕ *texto*
+┌• ${usedPrefix}setfoto
+└•⌕ *img*
+┌• ${usedPrefix}setname
+└•⌕ *texto*
+┌• ${usedPrefix}grupoid
+└•⌕ *id del grupo*
+┌• ${usedPrefix}infogrupo
+└•⌕ *información del grupo*
 ╰• •───• •───• •───•
 
-╭• •꒰─•🧰·𝙃𝙀𝙍𝙍𝘼𝙈𝙄𝙀𝙉𝙏𝘼𝙎ٜ۬･
-│•┐ _${usedPrefix}chatgpt_ *texto*
-┃•│ _${usedPrefix}chatgptvoz_ *texto*
-┃•│ _${usedPrefix}delchatgpt_
-┃•│ _${usedPrefix}hd_
-│•┘ _${usedPrefix}traducir_ *texto*
-╰• •───• •───• •───•
-
-╭• •꒰─•🌅·𝙐𝙏𝙄𝙇𝙄𝘿𝘼𝘿ٜ۬･
-│•┐ _${usedPrefix}toimg_
-┃•│ _${usedPrefix}tourl_
-│•┘ _${usedPrefix}sticker_
-╰• •───• •───• •───•
-
-╭• •꒰─•💾·𝘿𝙀𝙎𝘾𝘼𝙍𝙂𝘼𝙎ٜ۬･
-│•┐ _${usedPrefix}fb_ *link*
-┃•│ _${usedPrefix}apk_
-┃•│ _${usedPrefix}mediafire_ *link*
-┃•│ _${usedPrefix}ig_ *link*
-┃•│ _${usedPrefix}tiktok_ *link*
-┃•│ _${usedPrefix}twitter_ *link*
-┃•│ _${usedPrefix}pinterest_ *texto*
-┃•│ _${usedPrefix}mega_ *link*
-┃•│ _${usedPrefix}gitclone_ *link*
-┃•│ _${usedPrefix}quemusica_ *vídeo : audio*
-┃•│ _${usedPrefix}play : play2_ *texto*
-│•┘ _${usedPrefix}playdoc : playdoc2_ *texto*
-╰• •───• •───• •───•
-
-╭• •꒰─•👥·𝙋𝘼𝙍𝘼 𝙂𝙍𝙐𝙋𝙊𝙎ٜ۬･
-│•┐ _${usedPrefix}admins_
-┃•│ _${usedPrefix}add_
-┃•│ _${usedPrefix}grupo_ *abrir : cerrar*
-┃•│ _${usedPrefix}demote_
-┃•│ _${usedPrefix}promote_
-┃•│ _${usedPrefix}kick_
-┃•│ _${usedPrefix}link_
-┃•│ _${usedPrefix}resetlink_
-┃•│ _${usedPrefix}tagall_
-┃•│ _${usedPrefix}fantasmas_
-┃•│ _${usedPrefix}kickfantasmas_
-┃•│ _${usedPrefix}hidetag_
-┃•│ _${usedPrefix}setwelcome_
-┃•│ _${usedPrefix}setbye_
-┃•│ _${usedPrefix}setdesc_
-┃•│ _${usedPrefix}setname_
-┃•│ _${usedPrefix}setpp_
-┃•│ _${usedPrefix}grupoid_
-│•┘ _${usedPrefix}infogroup_
-╰• •───• •───• •───•
-
-╭• •꒰─•👑·𝙋𝙍𝙊𝙋𝙄𝙀𝙏𝘼𝙍𝙄𝙊ٜ۬･
-│•┐ _${usedPrefix}backup_
-┃•│ _${usedPrefix}update_
-┃•│ _${usedPrefix}updat_
-┃•│ _${usedPrefix}reporte_ *texto*
-┃•│ _${usedPrefix}unbanuser_
-┃•│ _${usedPrefix}banuser_
-┃•│ _${usedPrefix}banchat_
-│•┘ _${usedPrefix}unbanchat_
-╰• •───• •───• •───•
- `.trim()
-    
-const vi = [
-'https://qu.ax/ygwT.mp4',
-  'https://qu.ax/iFCi.mp4',
-     'https://qu.ax/jie.mp4',
-        'https://qu.ax/Pbha.mp4',
-           'https://qu.ax/bdvm.mp4'
-]
-try {
-await conn.sendMessage(m.chat, { video: { url: vi.getRandom() }, gifPlayback: true, caption: menu, contextInfo: yt })
-//await conn.sendMessage(m.chat, { video: { url: vi.getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender] }, { quoted: fkontak }) 
-} catch (error) {
-try {
-await conn.sendMessage(m.chat, { image: { url: imgAll.getRandom() }, gifPlayback: false, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
-} catch (error) {
-try {
-await conn.sendMessage(m.chat, { video: { url: vi.getRandom() }, gifPlayback: true, caption: menu, mentions: [m.sender, global.conn.user.jid] }, { quoted: fkontak }) 
-} catch (error) {
-try{
-await conn.sendFile(m.chat, imagen4, 'menu.jpg', menu, fkontak, false, { mentions: [m.sender, global.conn.user.jid] })
-} catch (error) {
-return 
-}}}} 
-} catch (e) {
-    conn.reply(m.chat, 'Ocurrio un error inesperado.', m);
-    }
+┍━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+│•꒰─•👑·𝙋𝙍𝙊𝙋𝙄𝙀𝙏𝘼𝙍𝙄𝙊۬👑ٜ･
+┕━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖
+┌• ${usedPrefix}backup
+└•⌕ *backup dol bot.*
+┌• ${usedPrefix}update
+└•⌕ *Actualizar bot.*
+┌• ${usedPrefix}reporte
+└•⌕ *reportar comando*
+┌• ${usedPrefix}unbanuser
+└•⌕ *Desbanear el usuario.*
+┌• ${usedPrefix}banuser
+└•⌕ *Banear el usuario.*
+┌• ${usedPrefix}banchat
+└•⌕ *Banear el chat.*
+┌• ${usedPrefix}unbanchat
+└•⌕ *Desbanear el chat.*
+await conn.sendButton(m.chat, naufrago, wm, pp, [
+['𝙁𝙐𝙉𝘾𝙄𝙊𝙉𝙀𝙎 🔜', '.on'],
+['𝗠𝗘𝗡𝗨 𝗔𝗨𝗗𝗜𝗢𝗦 🔜', '/menuaudios'], null, [
+['Canal', `${canal}`]], m)
 }
-
-handler.command = /^(menu|menú|memu|memú|help|info|comandos|2help|menu1.2|ayuda|commands|commandos|menucompleto|allmenu|allm|m|\?)$/i
+handler.help = ['estado']
+handler.tags = ['main']
+handler.command = /^(menutodo|allmenu|menucompleto|allmenu)$/i
+handler.register = true
 export default handler
 
 function clockString(ms) {
@@ -165,4 +250,5 @@ let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
 let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
 let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
 return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')}
+ 
 
