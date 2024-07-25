@@ -43,10 +43,10 @@ var iimg5 = 'https://i.postimg.cc/gJntKTG1/e872a51954db06122d6108df482ef157.jpg'
 
 global.ImgAll = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, imagen1, imagen2, imagen3]
 global.nzImg = [iimg1, iimg2, iimg3, iimg4, iimg5]
-global.linkNz = [grupo1, grupo2, canal]
-global.naufraRedes = [yt, ig, md, paypal, git, linkwabot, email, grupo1, grupo2, canal, paypal2]
+global.linkNz = [ngrupo1, ngrupo2, canal]
+global.naufraRedes = [yt, ig, md, paypal, git, linkwabot, email, ngrupo1, ngrupo2, canal, paypal2]
 global.naufraImg = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, iimg1, iimg2, iimg3, iimg4, iimg5, imagen1, imagen2, imagen3]
-global.naufraAll = [grupo1, grupo2, canal, yt, ig, md, paypal, git, linkwabot, email, grupo1, grupo2, canal, paypal2]
+global.naufraAll = [ngrupo1, ngrupo2, canal, yt, ig, md, paypal, git, linkwabot, email, ngrupo1, ngrupo2, canal, paypal2]
 
 global.yt = 'https://youtube.com/@user-bw5wl4ye8r?si=qN8bP4ZdKm3yXwbx';
 global.ig = 'https://www.instagram.com/naufrazapp?igsh=Y2g1ZXJxbm53eXAy';
@@ -55,8 +55,8 @@ global.paypal = 'https://www.paypal.me/NaufragoSolano';
 global.git = 'https://github.com/MultiBot-OFC/NaufraZapp-MD';
 global.linkwabot = 'https://wa.me/5493873687620';
 global.email = 'guardianbotmdoficial@gmail.com';
-global.grupo1 = 'https://chat.whatsapp.com/I7A2Q6EXtmE6d7zOxyYF3L';
-global.grupo2 = 'https://chat.whatsapp.com/I7A2Q6EXtmE6d7zOxyYF3L'; 
+global.ngrupo1 = 'https://chat.whatsapp.com/I7A2Q6EXtmE6d7zOxyYF3L';
+global.ngrupo2 = 'https://chat.whatsapp.com/I7A2Q6EXtmE6d7zOxyYF3L'; 
 global.canal = 'https://whatsapp.com/channel/0029VaRibRvDuMRj6ozMSN1l';
 global.paypal2 = 'https://www.paypal.me/ColaboracionBotOFC';
 
