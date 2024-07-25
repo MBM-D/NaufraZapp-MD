@@ -43,10 +43,10 @@ var iimg5 = 'https://i.postimg.cc/gJntKTG1/e872a51954db06122d6108df482ef157.jpg'
 
 global.ImgAll = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, imagen1, imagen2, imagen3]
 global.nzImg = [iimg1, iimg2, iimg3, iimg4, iimg5]
-//global.linkNz = [ngrupo1, ngrupo2, canal]
-//global.naufraRedes = [yt, ig, md, paypal, git, linkwabot, email, grupo1, grupo2, canal, paypal2]
+global.linkNz = 'https://naufrazapp.com/'
+global.naufraRedes = 'https://naufrazapp.com/'
 global.naufraImg = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, iimg1, iimg2, iimg3, iimg4, iimg5, imagen1, imagen2, imagen3]
-global.naufraAll = [grupo1, ngrupo2, canal, yt, ig, md, paypal, git, linkwabot, email, grupo1, grupo2, canal, paypal2]
+global.naufraAll = 'https://naufrazapp.com/'
 
 global.yt = 'https://youtube.com/@user-bw5wl4ye8r?si=qN8bP4ZdKm3yXwbx'
 global.ig = 'https://www.instagram.com/naufrazapp?igsh=Y2g1ZXJxbm53eXAy'
