@@ -10,7 +10,7 @@ const __dirname = global.__dirname(import.meta.url)
 //Imagenes
 global.imagen1 = fs.readFileSync('./Menu1.jpg')
 global.imagen2 = fs.readFileSync('./Menu2.jpg')
-global.imagen3 = fs.readFileSync('.Menu3.jpg')
+global.imagen3 = fs.readFileSync('./Menu3.jpg')
 
 global.nzImg1 = fs.readFileSync('./Menu1.jpg')
 global.nzImg2 = fs.readFileSync('./Menu2.jpg')
@@ -71,7 +71,7 @@ global.authFile = join(__dirname, `NaufraBotSession/`)
 global.authFileRespald = join(__dirname, `sesionRespaldo/`)
 global.temp = join(__dirname, 'tmp')
 global.media = raiz+'media/'
-global.jadibts = join(__dirname, 'MultiBot-OFC/')
+global.jadibts = join(__dirname, 'MultiBotOFC/')
 global.raiz = './Menu1.jpg'
 
 
