@@ -107,13 +107,13 @@ global.nzAll = ['https://qu.ax/ygwT.mp4', 'https://qu.ax/iFCi.mp4', 'https://qu.
 
 
 global.raiz = './'
-global.aniD = 'NaufraBotSession/'
+global.aniD = 'sessions/'
 global.dirP = raiz
-global.authFile = join(__dirname, `NaufraBotSession/`)
+global.authFile = join(__dirname, `sessions/`)
 global.authFileRespald = join(__dirname, `sesionRespaldo/`)
 global.temp = join(__dirname, 'tmp')
 global.media = raiz+'media/'
-global.jadibts = join(__dirname, 'MultiBotOFC/')
+global.jadibts = join(__dirname, 'jadibts/')
 global.raiz = './Menu1.jpg'
 
 
