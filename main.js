@@ -238,7 +238,7 @@ if (opcion == '1' || methodCodeQR) {
 console.log(chalk.bold.yellow(`\nEscanea el codigo QR, expira en 45 segundos... ❕`))}
 }
 if (connection == 'open') {
-console.log(boxen(chalk.bold(' ✅ CONECTADO A WHATSAPP CON EXITO ✅ '), { borderStyle: 'round', borderColor: 'green', title: chalk.blue.bold('CONECTADO ✅'), titleAlignment: 'center', float: 'center' }))}
+console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: 'center', float: 'center' }))}
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
 if (connection === 'close') {
 if (reason === DisconnectReason.badSession) {
