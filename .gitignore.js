@@ -129,7 +129,10 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-NaufraBotSession/
+sessions/
 data.store.json
 database.json
 package-lock.json
+.git
+
+  
