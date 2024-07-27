@@ -1,7 +1,14 @@
 {
-  "name": "NaufraZapp-MD",
-  "description": "Customizable WhatsApp Bot",
-  "repository": "https://github.com/MultiBot-OFC/NaufraZapp-MD",
-  "logo": "https://i.ibb.co/dG6rm49/fg-logo.png",
-  "keywords": ["bot", "whatsapp", "whatsapp-bot", "rpg", "naufra-bot-md", "games-wabot"]
+"name": "NaufraZapp-MD",
+"description": "Bot.",
+"repository": "https://github.com/NaufraZapp-MD",
+"logo": "https://i.postimg.cc/43sR8Ns5/Menu4.jpg",
+"keywords": ["bot", "whatsapp", "whatsapp-bot", "nz", "botbot", "botnz"],
+"buildpacks": [
+{ "url": "heroku/nodejs" },
+{ "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest" },
+{ "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git" },
+{ "url": "https://github.com/bogini/heroku-buildpack-graphicsmagick" }    
+]
 }
+
