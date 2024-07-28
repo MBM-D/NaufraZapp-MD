@@ -233,7 +233,7 @@ let naufrago = `╭─────────────────···•�
 ┌• ${usedPrefix}banchat
 └•⌕ *Banear el chat.*
 ┌• ${usedPrefix}unbanchat
-└•⌕ *Desbanear el chat.*
+└•⌕ *Desbanear el chat.*`
 await conn.sendButton(m.chat, naufrago, wm, pp, [
 ['𝙁𝙐𝙉𝘾𝙄𝙊𝙉𝙀𝙎 🔜', '.on'],
 ['𝗠𝗘𝗡𝗨 𝗔𝗨𝗗𝗜𝗢𝗦 🔜', '/menuaudios'], null, [
@@ -241,7 +241,7 @@ await conn.sendButton(m.chat, naufrago, wm, pp, [
 }
 handler.help = ['estado']
 handler.tags = ['main']
-handler.command = /^(menutodo|allmenu|menucompleto|allmenu)$/i
+handler.command = /^(menutodo|menucompleto|allmenu)$/i
 handler.register = true
 export default handler
 
