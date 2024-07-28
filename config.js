@@ -88,14 +88,14 @@ global.nzImg = [iimg1, iimg2, iimg3, iimg4, iimg5]
 global.linkNz = 'https://naufrazapp.com/'
 global.naufraRedes = 'https://naufrazapp.com/'
 global.naufraImg = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, iimg1, iimg2, iimg3, iimg4, iimg5, imagen1, imagen2, imagen3]
-global.naufraAll = 'https://naufrazapp.com/'
+global.naufraAll = [yt, ig, paypal, git, linkwabot, grupo1, grupo2, canal]
 
 global.yt = 'https://youtube.com/@user-bw5wl4ye8r?si=qN8bP4ZdKm3yXwbx'
 global.ig = 'https://www.instagram.com/naufrazapp?igsh=Y2g1ZXJxbm53eXAy'
 global.md = 'https://github.com/MultiBot-OFC/NaufraZapp-MD'
 global.paypal = 'https://www.paypal.me/NaufragoSolano'
 global.git = 'https://github.com/MultiBot-OFC/NaufraZapp-MD'
-global.linkwabot = 'https://wa.me/5493873687620'
+global.linkwabot = 'https://wa.me/5491133982337'
 global.email = 'guardianbotmdoficial@gmail.com'
 global.grupo1 = 'https://chat.whatsapp.com/I7A2Q6EXtmE6d7zOxyYF3L'
 global.grupo2 = 'https://chat.whatsapp.com/I7A2Q6EXtmE6d7zOxyYF3L'
