@@ -104,7 +104,7 @@ global.paypal2 = 'https://www.paypal.me/ColaboracionBotOFC'
 global.nzVideos = ['https://qu.ax/ygwT.mp4', 'https://qu.ax/iFCi.mp4', 'https://qu.ax/jie.mp4', 'https://qu.ax/Pbha.mp4', 'https://qu.ax/bdvm.mp4']
 global.nzAll = ['https://qu.ax/ygwT.mp4', 'https://qu.ax/iFCi.mp4', 'https://qu.ax/jie.mp4', 'https://qu.ax/Pbha.mp4', 'https://qu.ax/bdvm.mp4', iimg1, iimg2, iimg3, iimg4, iimg5]
 
-
+/*
 global.raiz = './'
 global.aniD = 'sessions/'
 global.dirP = raiz
@@ -114,7 +114,7 @@ global.temp = join(__dirname, 'tmp')
 global.media = raiz+'media/'
 global.jadibts = join(__dirname, 'jadibts/')
 global.raiz = './Menu1.jpg'
-
+*/
 
 global.rwait = '⏰'
 global.done = '✅'
