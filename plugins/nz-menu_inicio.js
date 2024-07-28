@@ -9,9 +9,9 @@ setTimeout(resolve, 1000) }) * 1000}
 let uptime = clockString(_uptime)
 let menu = `☞ 👑𝙉𝙖𝙪𝙛𝙧𝙖𝙕𝙖𝙥𝙥-𝙈𝘿👑
 
-☛  NɑufrɑZɑpp-MD es un creɑdo pɑrɑ *fɑcilitɑr el mɑnejo de tus grupos de Whɑtsɑpp* y *brindɑrte errɑmientɑs de entretenimiento pɑrɑ tus grupos.*  
+☛  NɑufrɑZɑpp-MD es un creɑdo pɑrɑ *fɑcilitɑr el mɑnejo de tus grupos de Whɑtsɑpp y brindarte herrɑmientɑs de entretenimiento pɑrɑ tus grupos.*  
 
-💥ɑnteriormente este bot erɑ *privɑdo* pero devido ɑ que muchos usuɑrios tɑmbién queriɑn instɑlɑrlo por ellos mismos se lɑnzo lɑ versión públicɑ de este mɑrɑvilloso bot, pɑrɑ que todos puedɑn disfrutɑrlo💥
+💥 ɑnteriormente este bot erɑ *privɑdo* pero devido ɑ que muchos usuɑrios tɑmbién queriɑn instɑlɑrlo por ellos mismos se lɑnzo lɑ versión públicɑ de este mɑrɑvilloso bot, pɑrɑ que todos puedɑn disfrutɑrlo 💥
 
 🫂ɢʀᴀᴄɪᴀs ᴀ ᴛᴏᴅᴏs ʟᴏs ᴄᴏʟᴀʙᴏʀᴀᴅᴏʀᴇs ᴘᴏʀ ᴇsᴛᴇ ᴍᴀʀᴀᴠɪʟʟᴏsᴏ ᴘʀᴏʏᴇᴄᴛᴏ🤗
 
@@ -22,7 +22,7 @@ Antes de comenzar a utilizar el bot, no se olvide de *verificarse o registrarse*
 await conn.sendButton(m.chat, menu, wm, pp, [
 ['𝙈𝙀𝙉𝙐 𝘾𝙊𝙈𝙋𝙇𝙀𝙏𝙊 💥', '.menucompleto'],
 ['𝘼𝙐𝙏𝙊 𝙑𝙀𝙍𝙄𝙁𝙄𝘾𝘼𝙍 ✅', '#reg nauSub.20']], null, [
-['𝘾𝘼𝙉𝘼𝙇 𝙊𝙁𝙄𝘾𝙄𝘼𝙇🌎', `${channel}`]], m)
+['𝘾𝘼𝙉𝘼𝙇 𝙊𝙁𝙄𝘾𝙄𝘼𝙇 🌎', `${canal}`]], m)
 }
 handler.help = ['menu']
 handler.tags = ['main']
