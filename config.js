@@ -1,11 +1,11 @@
-import { watchFile, unwatchFile } from 'fs'
-import chalk from 'chalk'
-import fs from 'fs'
-import moment from 'moment-timezone'
-import path, { join } from 'path'
-import { fileURLToPath, pathToFileURL } from 'url'
-global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') { return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString() }; global.__dirname = function dirname(pathURL) { return path.dirname(global.__filename(pathURL, true)) }; global.__require = function require(dir = import.meta.url) { return createRequire(dir) }
-const __dirname = global.__dirname(import.meta.url)
+import {watchFile, unwatchFile} from 'fs';
+import chalk from 'chalk';
+import {fileURLToPath} from 'url';
+import fs from 'fs'; 
+import cheerio from 'cheerio';
+import fetch from 'node-fetch';
+import axios from 'axios';
+import moment from 'moment-timezone';
 
 global.owner = [ //OWNERS
 ["5493873232212", '𝙉𝙖𝙪𝙛𝙧𝙖𝙕𝙖𝙥𝙥-𝙈𝘿', true], 
@@ -64,23 +64,23 @@ global.nz4 = fs.readFileSync('./storage/nz4.jpg')
 global.nz5 = fs.readFileSync('./storage/nz5.jpg')
 global.nz6 = fs.readFileSync('./storage/nz6.jpg')
 
-var img = 'https://i.postimg.cc/Y9t2mzvt/Menu2.jpg'
-var img1 = 'https://i.postimg.cc/T386DJsB/Menu3.jpg'
-var img2 = 'https://i.postimg.cc/T386DJsB/Menu3.jpg'
-var img3 = 'https://i.postimg.cc/43sR8Ns5/Menu4.jpg'
-var img4 = 'https://i.postimg.cc/j5T9x8L4/f0304022-da50-4a0a-8be4-6b4138bab3af.jpg'
-var img5 = 'https://i.postimg.cc/j5T9x8L4/f0304022-da50-4a0a-8be4-6b4138bab3af.jpg'
-var img6 = 'https://i.postimg.cc/8zq93kG3/c9737e9e-4e19-4f75-95d3-e56c746fb97e.jpg'
-var img7 = 'https://i.postimg.cc/8zq93kG3/c9737e9e-4e19-4f75-95d3-e56c746fb97e.jpg'
-var img8 = 'https://i.postimg.cc/GtK1wWKD/db93517c-0588-4a1b-b9a7-641b235597ad.jpg'
-var img9 = 'https://i.postimg.cc/cLb0JNSM/474106d3-382b-4964-af1e-fbfb35d495cd.jpg'
-var img10 = 'https://i.postimg.cc/PqvxZdBD/06efe094-8f28-444e-b3d4-7474a9ee7f3e.jpg'
+global.img = 'https://i.postimg.cc/Y9t2mzvt/Menu2.jpg'
+global.img1 = 'https://i.postimg.cc/T386DJsB/Menu3.jpg'
+global.img2 = 'https://i.postimg.cc/T386DJsB/Menu3.jpg'
+global.img3 = 'https://i.postimg.cc/43sR8Ns5/Menu4.jpg'
+global.img4 = 'https://i.postimg.cc/j5T9x8L4/f0304022-da50-4a0a-8be4-6b4138bab3af.jpg'
+global.img5 = 'https://i.postimg.cc/j5T9x8L4/f0304022-da50-4a0a-8be4-6b4138bab3af.jpg'
+global.img6 = 'https://i.postimg.cc/8zq93kG3/c9737e9e-4e19-4f75-95d3-e56c746fb97e.jpg'
+global.img7 = 'https://i.postimg.cc/8zq93kG3/c9737e9e-4e19-4f75-95d3-e56c746fb97e.jpg'
+global.img8 = 'https://i.postimg.cc/GtK1wWKD/db93517c-0588-4a1b-b9a7-641b235597ad.jpg'
+global.img9 = 'https://i.postimg.cc/cLb0JNSM/474106d3-382b-4964-af1e-fbfb35d495cd.jpg'
+global.img10 = 'https://i.postimg.cc/PqvxZdBD/06efe094-8f28-444e-b3d4-7474a9ee7f3e.jpg'
 
-var iimg1 = 'https://i.postimg.cc/t4KK7yy7/11fe6d78ece25ee972ee8de229e182a9.jpg'
-var iimg2 = 'https://i.postimg.cc/5t5R0Cnk/66945863cdf7c56b212c2280e91d497b.jpg'
-var iimg3 = 'https://i.postimg.cc/x1D5zdJr/0c967c4af27aa805391e3be495936acd.jpg'
-var iimg4 = 'https://i.postimg.cc/kM2LNB4D/89aaf3a76c5af6c6904716889463a278.jpg'
-var iimg5 = 'https://i.postimg.cc/gJntKTG1/e872a51954db06122d6108df482ef157.jpg'
+global.iimg1 = 'https://i.postimg.cc/t4KK7yy7/11fe6d78ece25ee972ee8de229e182a9.jpg'
+global.iimg2 = 'https://i.postimg.cc/5t5R0Cnk/66945863cdf7c56b212c2280e91d497b.jpg'
+global.iimg3 = 'https://i.postimg.cc/x1D5zdJr/0c967c4af27aa805391e3be495936acd.jpg'
+global.iimg4 = 'https://i.postimg.cc/kM2LNB4D/89aaf3a76c5af6c6904716889463a278.jpg'
+global.iimg5 = 'https://i.postimg.cc/gJntKTG1/e872a51954db06122d6108df482ef157.jpg'
 
 
 global.ImgAll = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, imagen1, imagen2, imagen3]
@@ -127,6 +127,44 @@ global.waitt = '*20%*'
 global.waittt = '*80%*'
 global.waitttt = '*99%*'
 global.waittttt = '*100%*'
+
+global.d = new Date(new Date + 3600000);
+global.locale = 'es';
+global.dia = d.toLocaleDateString(locale, {weekday: 'long'});
+global.fecha = d.toLocaleDateString('es', {day: 'numeric', month: 'numeric', year: 'numeric'});
+global.mes = d.toLocaleDateString('es', {month: 'long'});
+global.año = d.toLocaleDateString('es', {year: 'numeric'});
+global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
+global.wm2 = `${dia} ${fecha}\nNaufraZapp-MD`;
+global.gt = 'NaufraZapp-MD';
+global.mysticbot = 'NaufraBot';
+global.mysticbot = 'https://github.com/MultiBot-OFC/NaufraZapp-MD';
+global.nomorown = '51929838430';
+global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
+global.cmenut = '❖––––––『';
+global.cmenub = '┊✦ ';
+global.cmenuf = '╰━═┅═━––––––๑\n';
+global.cmenua = '\n⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕\n     ';
+global.dmenut = '*❖─┅──┅〈*';
+global.dmenub = '*┊»*';
+global.dmenub2 = '*┊*';
+global.dmenuf = '*╰┅────────┅✦*';
+global.htjava = '⫹⫺';
+global.htki = '*⭑•̩̩͙⊱•••• ☪*';
+global.htka = '*☪ ••••̩̩͙⊰•⭑*';
+global.comienzo = '• • ◕◕════';
+global.fin = '════◕◕ • •';
+global.botdate = `*Fecha:*  ${moment.tz('America/Mexico_City').format('DD/MM/YY')}`;
+global.bottime = `*Hora:* ${moment.tz('America/Mexico_City').format('HH:mm:ss')}`;
+global.fgif = {key: {participant: '0@s.whatsapp.net'}, message: {'videoMessage': {'title': wm, 'h': `Hmm`, 'seconds': '999999999', 'gifPlayback': 'true', 'caption': bottime, 'jpegThumbnail': fs.readFileSync('./Menu.png')}}};
+global.multiplier = 99;
+global.flaaa = [
+  'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=',
+  'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=',
+  'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=amped-logo&doScale=true&scaleWidth=800&scaleHeight=500&text=',
+  'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=',
+  'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text=',
+];
 
 //fake
 global.fsizedoc = '999999'
