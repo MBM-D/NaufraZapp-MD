@@ -88,7 +88,6 @@ global.nzImg = [iimg1, iimg2, iimg3, iimg4, iimg5]
 global.linkNz = 'https://naufrazapp.com/'
 global.naufraRedes = 'https://naufrazapp.com/'
 global.naufraImg = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, iimg1, iimg2, iimg3, iimg4, iimg5, imagen1, imagen2, imagen3]
-global.naufraAll = [yt, ig, paypal, git, linkwabot, grupo1, grupo2, canal]
 
 global.yt = 'https://youtube.com/@user-bw5wl4ye8r?si=qN8bP4ZdKm3yXwbx'
 global.ig = 'https://www.instagram.com/naufrazapp?igsh=Y2g1ZXJxbm53eXAy'
