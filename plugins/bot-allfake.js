@@ -30,11 +30,12 @@ console.log(`Error : ${e}`)
 let pp = ''
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? this.user.jid : m.sender
 //let pp = await this.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/1861aab98389b13db8588.jpg')
-global.imgAll = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10].getRandom()
+global.imgAll = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, imagen1, imagen2, imagen3, nz1, nz2, nz3, nz4, nz5, nz6].getRandom()
 global.naufraAll = [yt, ig, grupo1, grupo2, paypal, linkwabot, canal].getRandom()
 global.nzLink = [grupo1, grupo2, canal].getRandom()
 global.nzMenus = [imagen1, imagen2, imagen3].getRandom()
-
+global.naufraImg = [nz1, nz2, nz3, nz4, nz5, nz6].getRandom()
+	
 /* 
 Mensajes Fakes
 */
