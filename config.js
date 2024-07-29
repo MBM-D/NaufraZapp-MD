@@ -82,13 +82,6 @@ global.iimg3 = 'https://i.postimg.cc/x1D5zdJr/0c967c4af27aa805391e3be495936acd.j
 global.iimg4 = 'https://i.postimg.cc/kM2LNB4D/89aaf3a76c5af6c6904716889463a278.jpg'
 global.iimg5 = 'https://i.postimg.cc/gJntKTG1/e872a51954db06122d6108df482ef157.jpg'
 
-
-global.ImgAll = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, imagen1, imagen2, imagen3]
-global.nzImg = [iimg1, iimg2, iimg3, iimg4, iimg5]
-global.linkNz = 'https://naufrazapp.com/'
-global.naufraRedes = 'https://naufrazapp.com/'
-global.naufraImg = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, iimg1, iimg2, iimg3, iimg4, iimg5, imagen1, imagen2, imagen3]
-
 global.yt = 'https://youtube.com/@user-bw5wl4ye8r?si=qN8bP4ZdKm3yXwbx'
 global.ig = 'https://www.instagram.com/naufrazapp?igsh=Y2g1ZXJxbm53eXAy'
 global.md = 'https://github.com/MultiBot-OFC/NaufraZapp-MD'
