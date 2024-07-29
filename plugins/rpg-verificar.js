@@ -20,7 +20,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   user.registered = true
 let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 6)        
 //m.react('📩') 
-let img = menusImgs4;
+let img = imagen1;
   await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
 let regbot = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤
 •┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•
