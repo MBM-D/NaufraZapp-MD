@@ -5,7 +5,6 @@ let chat = global.db.data.chats[m.chat]
 let user = global.db.data.users[m.sender]
 let bot = global.db.data.settings[conn.user.jid] || {}
 let type = (args[0] || '').toLowerCase()
-let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 let isAll = false, isUser = false
 switch (type) {
 case 'welcome':
@@ -541,7 +540,7 @@ _#on *antisubbots*_
 > NaufraZapp-Beta`, fkontak, m )
 throw false
 }
-conn.reply(m.chat, `┏•════════════════•\n${isEnable ? '┃『❇️』' : '┃『✅』'} COMANDO: ${type}\n┃『⚙️』ESTADO: ${isEnable ? '*Activado*' : '*Desactivado*'}\n┃『💾』PARA: ${isAll ? '*Este bot.*' : isUser ? '' : '*Este chat.*'}\n┗•════════════════•`, fkontak, m)
+conn.reply(m.chat, `┏•════════════════•\n${isEnable ? '┃『❇️』' : '┃『✅』'} COMANDO: ${type}\n┃『⚙️』ESTADO: ${isEnable ? '*Activado*' : '*Desactivado*'}\n┃『💾』PARA: ${isAll ? '*Este bot.*' : isUser ? '' : '*Este chat.*'}\n┗•════════════════•`, m)
 
 }
 handler.help = ['en', 'dis'].map(v => v + 'able')
