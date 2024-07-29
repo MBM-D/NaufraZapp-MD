@@ -49,11 +49,11 @@ global.menudi = ['⛶','❏','⫹⫺']
 global.dev = '✯ Naufrago ✯'
 global.devnum = '+54 9 3873 23-2212'
 
-global.imgAll = imagen1
-global.naufraAll = canal
-global.nzLink = grupo2
-global.nzMenus = imagen2
-global.naufraImg = nz4
+global.imgAll = fs.readFileSync('./Menu1.jpg')
+global.naufraAll = 'https://whatsapp.com/channel/0029VaRibRvDuMRj6ozMSN1l'
+global.nzLink = 'https://chat.whatsapp.com/I7A2Q6EXtmE6d7zOxyYF3L'
+global.nzMenus = fs.readFileSync('./Menu2.jpg')
+global.naufraImg = fs.readFileSync('./storage/nz4.jpg')
 	
 //Imagenes
 global.imagen1 = fs.readFileSync('./Menu1.jpg')
