@@ -196,7 +196,7 @@ rl.close()
         setTimeout(async () => {
             let codigo = await conn.requestPairingCode(numeroTelefono)
             codigo = codigo?.match(/.{1,4}/g)?.join("-") || codigo
-            console.log(chalk.black(chalk.bgGreen(`TU CODIGO ES:`)), chalk.black(chalk.white(codigo)))
+            console.log(chalk.green(chalk.bgBlack(`TU CODIGO ES:`)), chalk.black(chalk.white(codigo)))
         }, 3000)
 }}
 }
@@ -244,16 +244,16 @@ unlinkSync(`./NaufraBotSession/${files}`)
 
 function purgeSessionSB() {
 try {
-let listaDirectorios = readdirSync('./BotsWhatsAppOFC/');
+let listaDirectorios = readdirSync('./MultiBotOFC/');
 let SBprekey = []
 listaDirectorios.forEach(directorio => {
-if (statSync(`./BotsWhatsAppOFC/${directorio}`).isDirectory()) {
-let DSBPreKeys = readdirSync(`./BotsWhatsAppOFC/${directorio}`).filter(fileInDir => {
+if (statSync(`./MultiBotOFC/${directorio}`).isDirectory()) {
+let DSBPreKeys = readdirSync(`./MultiBotOFC/${directorio}`).filter(fileInDir => {
 return fileInDir.startsWith('pre-key-') /*|| fileInDir.startsWith('app-') || fileInDir.startsWith('session-')*/
 })
 SBprekey = [...SBprekey, ...DSBPreKeys]
 DSBPreKeys.forEach(fileInDir => {
-unlinkSync(`./BotsWhatsAppOFC/${directorio}/${fileInDir}`)
+unlinkSync(`./MultiBotOFC/${directorio}/${fileInDir}`)
 })
 }
 })
@@ -263,7 +263,7 @@ console.log(chalk.bold.red(`Algo salio mal durante la eliminación, archivos no 
 }}
 
 function purgeOldFiles() {
-const directories = ['./NaufraBotSession/', './BotsWhatsAppOFC/']
+const directories = ['./NaufraBotSession/', './MultiBotOFC/']
 const oneHourAgo = Date.now() - (60 * 60 * 1000)
 directories.forEach(dir => {
 readdirSync(dir, (err, files) => {
