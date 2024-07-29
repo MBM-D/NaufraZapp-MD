@@ -5,7 +5,7 @@ import fs from 'fs';
 import cheerio from 'cheerio';
 import fetch from 'node-fetch';
 import axios from 'axios';
-import moment from 'moment-timezone';
+import moment from 'moment-timezone'
 
 global.owner = [ //OWNERS
 ["5493873232212", '𝙉𝙖𝙪𝙛𝙧𝙖𝙕𝙖𝙥𝙥-𝙈𝘿', true], 
@@ -49,11 +49,11 @@ global.menudi = ['⛶','❏','⫹⫺']
 global.dev = '✯ Naufrago ✯'
 global.devnum = '+54 9 3873 23-2212'
 
-global.imgAll = [img, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, imagen1, imagen2, imagen3, nz1, nz2, nz3, nz4, nz5, nz6]
-global.naufraAll = [yt, ig, grupo1, grupo2, paypal, linkwabot, canal]
-global.nzLink = [grupo1, grupo2, canal]
-global.nzMenus = [imagen1, imagen2, imagen3]
-global.naufraImg = [nz1, nz2, nz3, nz4, nz5, nz6]
+global.imgAll = imagen1
+global.naufraAll = canal
+global.nzLink = grupo2
+global.nzMenus = imagen2
+global.naufraImg = nz4
 	
 //Imagenes
 global.imagen1 = fs.readFileSync('./Menu1.jpg')
