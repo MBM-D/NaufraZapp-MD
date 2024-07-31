@@ -17,7 +17,7 @@ const estiloaudio = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ..
 let ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 99, status: 1, surface: 1, message: wm, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
 let fgif = {key: {participant : '0@s.whatsapp.net'}, message: {"videoMessage": { "title": wm, "h": `Hmm`, 'seconds': '999999999', 'gifPlayback': 'true', 'caption': bottime, 'thumbnailUrl': imgAll}}}
                              
-let enlace = { contextInfo: { externalAdReply: {title: wm, body: 'support group' , sourceUrl: naufraAll, thumbnail: await(await fetch(naufraMenus)).buffer() }}}
+let enlace = { contextInfo: { externalAdReply: {title: wm, body: 'support group' , sourceUrl: naufraAll, thumbnail: await(await fetch(imgAll)).buffer() }}}
 let enlace2 = { contextInfo: { externalAdReply: { showAdAttribution: true, mediaUrl: yt, mediaType: 'VIDEO', description: '', title: wm, body: 'WhatsApp Bot', thumbnailUrl: imgAll, sourceUrl: naufraAll }}}
 let dos = [enlace, enlace2]  
 
