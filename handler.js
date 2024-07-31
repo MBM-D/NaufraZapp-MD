@@ -8,7 +8,6 @@ import fs from 'fs';
 import chalk from 'chalk';
 import mddd5 from 'md5';
 import ws from 'ws';
-import './plugins/naufra-fakes.js'
 
 /**
  * @type {import('@whiskeysockets/baileys')}
