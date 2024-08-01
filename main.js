@@ -259,7 +259,7 @@ unlinkSync(`./MultiBotOFC/${directorio}/${fileInDir}`)
 })
 if (SBprekey.length === 0) return; //console.log(chalk.cyanBright(`=> No hay archivos por eliminar.`))
 } catch (err) {
-console.log(chalk.bold.red(`Algo salio mal durante la eliminación, archivos no eliminados`))
+console.log(chalk.bold.red(`Algo salio mal durante la eliminación, archivos no eliminados -> ${err}`))
 }}
 
 function purgeOldFiles() {
