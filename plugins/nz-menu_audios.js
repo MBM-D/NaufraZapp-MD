@@ -115,7 +115,7 @@ let str = `
 await conn.sendButton(m.chat, str, wm, imagebot, [
 ['Volver al menu 🏷️', '.allmenu'],
 ['Activar Audios ✅', '#on audios'],
-['Estado 🪐', '/estado'], null, null, fkontak)}
+['Estado 🪐', '/estado']], null, null, fkontak)}
 handler.command = /^menuaudios$/i
 //handler.private = true
 handler.register = true
