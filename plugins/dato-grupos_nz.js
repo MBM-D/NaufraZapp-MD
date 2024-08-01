@@ -1,6 +1,6 @@
 let handler = async (m, { conn, command }) => {
  
- let media = naufraMenus
+ let media = imagen7
 
 let str = `❮🌎❯ » *_BIENVENIDO A LOS GRUPOS OFICIALES DEL BOT._*
 •────────────────•
