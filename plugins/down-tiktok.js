@@ -33,7 +33,7 @@ handler.limit = false
 }}}}}
 handler.help = ['tiktok']
 handler.tags = ['dl']
-handler.command = /^(tik|tok2)(dl|nowm)?$/i
+handler.command = /^(tiktok|tok2)(dl|nowm)?$/i
 handler.money = 100
 handler.register = true
 export default handler
