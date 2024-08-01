@@ -18,5 +18,5 @@ await conn.sendButton(m.chat, menu, wm, imagebot, [
 ['𝘼𝙐𝙏𝙊 𝙑𝙀𝙍𝙄𝙁𝙄𝘾𝘼𝙍 ✅', '#reg nauSub.20']], null, [
 ['𝘾𝘼𝙉𝘼𝙇 𝙊𝙁𝙄𝘾𝙄𝘼𝙇🌎', `${canal}`]], null, null, fkontak)}
 handler.command = /^menu|help|comandos|memu|menú|memú$/i
-handler.register = true
+handler.register = false
 export default handler
