@@ -5,7 +5,7 @@ let res = await yts(text)
 let vid = res.videos[0]
 if (!vid) throw `❮❌❯ » 𝙀𝙣𝙡𝙖𝙘𝙚 𝙣𝙤 𝙫𝙖𝙡𝙞𝙙𝙤, 𝙞𝙣𝙜𝙧𝙚𝙨𝙚 𝙚𝙡 𝙣𝙤𝙢𝙗𝙧𝙚 𝙙𝙚 𝙡𝙖 𝙘𝙖𝙣𝙘𝙞𝙤𝙣.`
 let { title, description, thumbnail, videoId, timestamp, views, ago, url } = vid
-m.react('✅') 
+//m.react('✅') 
 let buscador = `•═══• ❮ 🎬 • \`Play YT\` • 🎧 ❯ •═══•
 
 *TITULO:*
