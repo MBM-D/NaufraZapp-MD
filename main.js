@@ -32,7 +32,7 @@ const PORT = process.env.PORT || process.env.SERVER_PORT || 3000;
 
 protoType();
 serialize();
-
+//try
 global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') {
   return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString();
 }; global.__dirname = function dirname(pathURL) {
@@ -352,7 +352,9 @@ global.reloadHandler = async function(restatConn) {
     const oldChats = global.conn.chats;
     try {
       global.conn.ws.close();
-    } catch { }
+    } catch(e){
+      console.log(e);
+    }
     conn.ev.removeAllListeners();
     global.conn = makeWASocket(connectionOptions, {chats: oldChats});
     isInit = true;
@@ -471,9 +473,8 @@ global.reload = async (_ev, filename) => {
         global.plugins[filename] = module.default || module;
       } catch (e) {
         conn.logger.error(`error require plugin '${filename}\n${format(e)}'`);
-      } finally {
-        global.plugins = Object.fromEntries(Object.entries(global.plugins).sort(([a], [b]) => a.localeCompare(b)));
-      }
+      } 
+      global.plugins = Object.fromEntries(Object.entries(global.plugins).sort(([a], [b]) => a.localeCompare(b)));
     }
   }
 };
