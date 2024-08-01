@@ -192,7 +192,7 @@ let str = `
 await conn.sendButton(m.chat, str, wm, imagebot, [
 ['𝗜𝗡𝗦𝗧𝗔𝗟𝗔𝗥 𝗕𝗢𝗧 🤖', '.installbot'],
 ['𝗘𝗦𝗧𝗔𝗗𝗢 🪐', '#estado'],
-['𝗚𝗥𝗨𝗣𝗢𝗦 👥', '/gruposnz'], null, null, fkontak)}
+['𝗚𝗥𝗨𝗣𝗢𝗦 👥', '/gruposnz']], null, null, fkontak)}
 handler.command = /^allmenu|menucompleto|menuall|menutodo$/i
 //handler.private = true
 handler.register = true
