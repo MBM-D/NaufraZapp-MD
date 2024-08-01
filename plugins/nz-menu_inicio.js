@@ -3,9 +3,7 @@ let handler = async (m, { conn, command }) => {
 let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 let menu = `•═══• ❮🌎 \`BIENVENIDO/A\` 🌎❯ •═══•
 
-☞ 👑𝙉𝙖𝙪𝙛𝙧𝙖𝙕𝙖𝙥𝙥-𝙈𝘿👑
-
-☛  NɑufrɑZɑpp-MD es un creɑdo pɑrɑ *fɑcilitɑr el mɑnejo de tus grupos de Whɑtsɑpp* y *brindɑrte errɑmientɑs de entretenimiento pɑrɑ tus grupos.*  
+☛  NɑufrɑZɑpp-MD fue creɑdo pɑrɑ *fɑcilitɑr el mɑnejo de tus grupos de Whɑtsɑpp* y *brindɑrte errɑmientɑs de entretenimiento pɑrɑ tus grupos.*  
 
 💥ɑnteriormente este bot erɑ *privɑdo* pero devido ɑ que muchos usuɑrios tɑmbién queriɑn instɑlɑrlo por ellos mismos se lɑnzo lɑ versión públicɑ de este mɑrɑvilloso bot, pɑrɑ que todos puedɑn disfrutɑrlo💥
 
