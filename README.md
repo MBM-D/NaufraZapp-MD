@@ -15,31 +15,15 @@ termux-setup-storage
 ```
 
 ```bash
-apt update
+apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 
 ```bash
-apt upgrade
+git clone https://github.com/MultiBot-OFC/NaufraZapp-MD && cd NaufraZapp-MD
 ```
 
 ```bash
-pkg install -y git nodejs ffmpeg imagemagick yarn
-```
-
-```bash
-git clone https://github.com/MultiBot-OFC/NaufraZapp-MD
-```
-
-```bash
-cd NaufraZapp-MD
-```
-
-```bash
-yarn install
-```
-
-```bash
-npm install
+yarn install && npm install
 ```
 
 ```bash
