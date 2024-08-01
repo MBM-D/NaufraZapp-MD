@@ -112,6 +112,8 @@ global.grupo1 = 'https://chat.whatsapp.com/I7A2Q6EXtmE6d7zOxyYF3L'
 global.grupo2 = 'https://chat.whatsapp.com/I7A2Q6EXtmE6d7zOxyYF3L'
 global.canal = 'https://whatsapp.com/channel/0029VaRibRvDuMRj6ozMSN1l'
 global.paypal2 = 'https://www.paypal.me/ColaboracionBotOFC'
+global.creador = 'https://wa.me/51929838430'
+global.asistencia = 'https://wa.me/5493873232221'
 
 global.nzVideos = ['https://qu.ax/ygwT.mp4', 'https://qu.ax/iFCi.mp4', 'https://qu.ax/jie.mp4', 'https://qu.ax/Pbha.mp4', 'https://qu.ax/bdvm.mp4']
 global.nzAll = ['https://qu.ax/ygwT.mp4', 'https://qu.ax/iFCi.mp4', 'https://qu.ax/jie.mp4', 'https://qu.ax/Pbha.mp4', 'https://qu.ax/bdvm.mp4', iimg1, iimg2, iimg3, iimg4, iimg5]
