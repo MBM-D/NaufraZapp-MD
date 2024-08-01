@@ -56,7 +56,7 @@ global.nzMenus = fs.readFileSync('./Menu2.jpg')
 global.naufraImg = fs.readFileSync('./storage/nz4.jpg')
 	
 //Imagenes
-global.imagen1 = fs.readFileSync('./Menu1.jpg')
+global.imagen1 = 'https://telegra.ph/file/4c4de4fbd4b87fc6c397d.jpg'
 global.imagen2 = fs.readFileSync('./Menu2.jpg')
 global.imagen3 = fs.readFileSync('./Menu3.jpg')
 global.imagen4 = fs.readFileSync('./imagenes/naufra1.jpg')
