@@ -6,8 +6,8 @@ let str = `•═══• ❮🌎 \`BIENVENIDO/A\` 🌎❯ •═══•
 - *_Para ver el menu completo, presione el boton de_*
 • \`Ir al menu\``
 await conn.sendButton(m.chat, str, wm, imagebot, [
-['IR AL MENU 🪐', '.esubbot'],
-['GRUPOS 🔜', '#esubbot --code']], null, null, fkontak)}
+['IR AL MENU 🪐', '.allmenu'],
+['GRUPOS 🔜', '#gruposnz']], null, null, fkontak)}
 handler.command = /^menu|help|comandos|memu|menú|memú$/i
 handler.register = true
 export default handler
