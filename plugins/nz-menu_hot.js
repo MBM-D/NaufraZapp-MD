@@ -45,7 +45,7 @@ await conn.sendButton(m.chat, str, wm, imagebot, [
 ['IR AL MENU ⚡', '.allmenu'],
 ['GRUPOS 👥', '#gruposnz'],
 ['ESTADO ✅', '/estado']], null, null, fkontak)}
-handler.command = /^allmenu|menucompleto|menuall|menutodo$/i
+handler.command = /^menuhot|menuhorny|menu18|memu18|memuhot$/i
 //handler.private = true
 handler.register = true
 export default handler
