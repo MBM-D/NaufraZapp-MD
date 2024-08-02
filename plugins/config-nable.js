@@ -1,6 +1,6 @@
 const handler = async (m, {conn, usedPrefix, command, args, isOwner, isAdmin, isROwner}) => {
 
-let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
+//let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 
   const optionsFull = `
 ╭᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─᷼─•
@@ -474,13 +474,13 @@ throw false
 global.opts['swonly'] = isEnable
 break
 default:
-if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, {text: optionsFull}, {quoted: fkontak});
+if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, {text: optionsFull}, {quoted: m});
 throw false;
 }
 await conn.reply(m.chat, `
 ╭• •┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈• •─• ⧐
 ┃⚙️ 𝗢𝗣𝗖𝗜𝗢𝗡: *${type}* 
-╰• •┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈• •─• ⧐`, fkontak, {
+╰• •┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈• •─• ⧐`, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, description: null, 
 title: `𝗖𝗢𝗠𝗔𝗡𝗗𝗢: ${isEnable ? '𝖠𝖢𝖳𝖨𝖵𝖠𝖣𝖮 ✅' : ' 𝖣𝖤𝖲𝖠𝖢𝖳𝖨𝖵𝖠𝖣𝖮 ⛔'}`,
 body: `𝗣𝗔𝗥𝗔: ${isAll ? '𝖭𝖺𝗎𝖿𝗋𝖺𝖹𝖺𝗉𝗉-𝖬𝖣 🤖' : isUser ? '' : '𝖤𝖲𝖳𝖤 𝖢𝖧𝖠𝖳 💬'}`, previewType: 0, thumbnail: imagen1, sourceUrl: global.yt}}})} 
