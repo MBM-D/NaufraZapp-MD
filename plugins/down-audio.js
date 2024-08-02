@@ -22,7 +22,7 @@ const handler = async (m, { conn, args }) => {
     const cap = `TITULO: ${title}\nPESO: ${size} MB\n\n${wm}`.trim();
 
     await conn.sendMessage(m.chat, { document: buff_aud, caption: cap, mimetype: 'audio/mpeg', fileName: `${title}.mp3` }, { quoted: m });
-    await conn.sendMessage(m.chat, { text: tradutorrr.texto5[4], edit: key }, { quoted: m });
+    await conn.sendMessage(m.chat, { text: `Aqui tiene el audio`, edit: key }, { quoted: m });
   } catch (error) {
     console.log('Primera API falló, intentando con la segunda...', error);
     try {
