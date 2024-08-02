@@ -6,7 +6,7 @@ let haha = await res[Math.floor(res.length * Math.random())]
    
 conn.sendButton(m.chat, `⛩️😏 *_Boys_* 😏⛩️`.trim(), wm, haha, [['🔥 𝙎𝙞𝙜𝙪𝙞𝙚𝙣𝙩𝙚 😏', `${usedPrefix + command}`]], null, null, m)    
 }
-handler.command = handler.help = ['endeavor', 'takeda', 'asuma']
+handler.command = handler.help = ['endeavor', 'takeda', 'igarashi', 'asuma']
 handler.tags = ['hots']
 //handler.private = true
 handler.register = true
