@@ -29,6 +29,19 @@ yarn install && npm install
 ```bash
 npm start 
 ```
+# 🔥ACTIVAR EN CASO DE DETENERSE EN TERMUX
+
+Si después de instalar el bot en Termux se detiene (pantalla en blanco, pérdida de conexión a Internet, reinicio del dispositivo), sigue estos pasos:
+
+1. Abre Termux y navega al directorio del bot:
+    ```bash
+    cd NaufraZapp-MD
+    ```
+
+2. Inicia el bot nuevamente:
+    ```bash
+    npm start
+    ```
 # 🔥INSTALACIÓN POR CLOUD SHELL.
 * Instala clud shell [aqui](https://www.mediafire.com/file/bp2l6cci2p30hjv/Cloud+Shell_1.apk/file)
 
