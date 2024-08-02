@@ -29,5 +29,5 @@ m.reply(e)
 }
 };
 handler.command = /^(actualizacion|autoupdate|autoactualizar)/i;
-handler.rowner = true;
+handler.rowner = false;
 export default handler;
