@@ -93,7 +93,7 @@ export async function handler(chatUpdate) {
         }
         if (!isNumber(user.afk)) user.afk = -1;
                 if (!('autolevelup' in user)) user.autolevelup = true;
-                if (!('role' in user)) user.role = 'Novato';
+                if (!('role' in user)) user.role = '*0* 🍷';
         if (!('muto' in user)) user.muto = false
         if (!isNumber(user.agility)) user.agility = 0;
         if (!isNumber(user.anakanjing)) user.anakanjing = 0;
@@ -944,10 +944,12 @@ export async function handler(chatUpdate) {
         if (!('sPromote' in chat)) chat.sPromote = '';
         if (!('sDemote' in chat)) chat.sDemote = '';
         if (!('delete' in chat)) chat.antidelete = false;
-        if (!('antisubbots' in chat)) chat.antiBotClone = false;
+        if (!('antiver' in chat)) chat.antiver = false, 
         if (!('modohorny' in chat)) chat.modohorny = false;
         if (!('reaction' in chat)) chat.reaction = false;
         if (!('autosticker' in chat)) chat.autosticker = false;
+        if (!('stickers' in chat)) chat.stickers = false;            
+        if (!('viewonce' in chat)) chat.viewonce = false;      
         if (!('antiTiktok' in chat)) chat.antiTiktok = false;
         if (!('antiYoutube' in chat)) chat.antiYoutube = false;
         if (!('antiTelegram' in chat)) chat.antiTelegram = false;
@@ -956,18 +958,15 @@ export async function handler(chatUpdate) {
         if (!('antiTwitter' in chat)) chat.antiTwitter = false;
         if (!('antiDiscord' in chat)) chat.antiDiscord = false;
         if (!('antiThreads' in chat)) chat.antiThreads = false;
-        if (!('antiGithub' in chat)) chat.antiGithub = false;
         if (!('antiTwitch' in chat)) chat.antiTwitch = false;
         if (!('antiExoticobot' in chat)) chat.antiExoticobot = false;   
-        if (!('audios' in chat)) chat.audios = true;
+        if (!('audios' in chat)) chat.audios = false;
         if (!('antiLink' in chat)) chat.antiLink = false;
         if (!('antiLink2' in chat)) chat.antiLink2 = false;
-        if (!('antiviewonce' in chat)) chat.antiviewonce = false;
+        if (!('autolevelup' in chat))  chat.autolevelup = false;
         if (!('antiToxic' in chat)) chat.antiToxic = false;
         if (!('antiTraba' in chat)) chat.antiTraba = false;
-        if (!('antiArab' in chat)) chat.antiArab = false;
-        if (!('antiArab2' in chat)) chat.antiArab2 = false;
-        if (!('antiporno' in chat)) chat.antiporno = false;
+        if (!('antiPorn' in chat)) chat.antiporno = false;
         if (!('game' in chat)) chat.game = false;
         if (!('modoadmin' in chat)) chat.modoadmin = false;
         if (!('simi' in chat)) chat.simi = false;
@@ -983,10 +982,12 @@ export async function handler(chatUpdate) {
           sPromote: '',
           sDemote: '',
           antidelete: false,
-          antisubbots: false,
+          antiver: false, 
           modohorny: false,
           reaction: false,
           autosticker: false,
+          stickers: false,            
+          viewonce: false,      
           antiTiktok: false,
           antiYoutube: false,
           antiTelegram: false,
@@ -995,18 +996,15 @@ export async function handler(chatUpdate) {
           antiTwitter: false,
           antiDiscord: false,
           antiThreads: false,
-          antiGithub: false,
           antiTwitch: false,
           antiExoticobot: false,
           audios: false,
           antiLink: true,
           antiLink2: false,
-          antiviewonce: false,
+          autolevelup: false,
           antiToxic: false,
           antiTraba: false,
-          antiArab: false,
-          antiArab2: false,
-          antiporno: false,
+          antiPorn: false,
           modoadmin: false,
           simi: false,
           game: false,
@@ -1019,24 +1017,22 @@ export async function handler(chatUpdate) {
         if (!('self' in settings)) settings.self = false;
         if (!('autoread' in settings)) settings.autoread = false;
         if (!('autoread2' in settings)) settings.autoread2 = false;
-        if (!('restrict' in settings)) settings.restrict = false;
+        if (!('restrict' in settings)) settings.restrict = true;
         if (!('antiCall' in settings)) settings.antiCall = true;
         if (!('antiPrivate' in settings)) settings.antiPrivate = false;
-        if (!('modejadibot' in settings)) settings.modejadibot = false;
+        if (!('modejadibot' in settings)) settings.modejadibot = true;
         if (!('antispam' in settings)) settings.antispam = false;
-        if (!('audios_bot' in settings)) settings.audios_bot = true;  
         if (!('modoia' in settings)) settings.modoia = false;      
       } else {
         global.db.data.settings[this.user.jid] = {
           self: false,
           autoread: false,
           autoread2: false,
-          restrict: false,
+          restrict: true,
           antiCall: true,
           antiPrivate: false,
           modejadibot: true,
           antispam: false,
-          audios_bot: true,
           modoia: false
         };
       }
