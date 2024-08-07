@@ -5,19 +5,19 @@ var handler = async (m, { conn, usedPrefix, command }) => {
 
 conn.hdr = conn.hdr ? conn.hdr : {}
 if (m.sender in conn.hdr)
-return conn.reply(m.chat, `『✦』Espere a que la imagen solicitada sea enviado...`, m, fpay, )
+return conn.reply(m.chat, `『✦』Espere a que la imagen solicitada sea enviado...`, m )
 
 let q = m.quoted ? m.quoted : m
 let mime = (q.msg || q).mimetype || q.mediaType || ""
 if (!mime)
 
-return conn.reply(m.chat, `『✦』Por favor, responda a una foto de para aplicar el efecto HD.`, m, fpay, )
+return conn.reply(m.chat, `『✦』Por favor, responda a una foto de para aplicar el efecto HD.`, m )
 if (!/image\/(jpe?g|png|mp4)/.test(mime))
 
-return conn.reply(m.chat, `『✦』El archivo: ${mime} no es compatible para este comando.`, m, fpay, )
+return conn.reply(m.chat, `『✦』El archivo: ${mime} no es compatible para este comando.`, m )
 else conn.hdr[m.sender] = true
 
-conn.reply(m.chat, '『✦』Aplicando efecto...', m, fpay, )
+conn.reply(m.chat, '『✦』Aplicando efecto...', m )
 let img = await q.download?.()
 
 let error
