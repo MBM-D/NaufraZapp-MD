@@ -1,4 +1,5 @@
 const handler = async (m, {conn, usedPrefix, command, args, isOwner, isAdmin, isROwner}) => {
+
 let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 
   const optionsFull = `
@@ -17,6 +18,7 @@ let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status
 │⌑┃ *_${usedPrefix}on modohorny_*
 │⌑┃ *_${usedPrefix}on stickers_*
 │⌑┃ *_${usedPrefix}on game_*
+│⌑┃ *_${usedPrefix}on game2_*
 │⌑┃ *_${usedPrefix}on temporal_*
 │⌑┃ *_${usedPrefix}on autolevelup_*
 │⌑┃ *_${usedPrefix}on autosticker_*
@@ -47,6 +49,7 @@ let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status
 │⌑┃ *_${usedPrefix}off modohorny_*
 │⌑┃ *_${usedPrefix}off stickers_*
 │⌑┃ *_${usedPrefix}off game_*
+│⌑┃ *_${usedPrefix}off game2_*
 │⌑┃ *_${usedPrefix}off temporal_*
 │⌑┃ *_${usedPrefix}off autolevelup_*
 │⌑┃ *_${usedPrefix}off autosticker_*
@@ -70,13 +73,14 @@ let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status
 │⌑┗┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•◌ͦ
 ╰─────────────────────•
   `.trim();
-            const isEnable = /true|enable|(turn)?on|1/i.test(command);
-  const chat = global.db.data.chats[m.chat];
-  const user = global.db.data.users[m.sender];
-  const bot = global.db.data.settings[conn.user.jid] || {};
-  const type = (args[0] || '').toLowerCase();
-  let isAll = false; const isUser = false;
-  switch (type) {
+
+const isEnable = /true|enable|(turn)?on|1/i.test(command);
+const chat = global.db.data.chats[m.chat];
+const user = global.db.data.users[m.sender];
+const bot = global.db.data.settings[conn.user.jid] || {};
+const type = (args[0] || '').toLowerCase();
+let isAll = false; const isUser = false;
+switch (type) {
     case 'welcome':
       if (!m.isGroup) {
         if (!isOwner) {
@@ -131,15 +135,6 @@ let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status
       }
       chat.antiporno = isEnable;
       break;
-      case 'antisubbots':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiBotClone = isEnable
-      break
     case 'delete':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -445,23 +440,16 @@ let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status
       }}
       chat.antiArab = isEnable;
       break;
-    case 'antiarabes2':
-      if (m.isGroup) {
-      if (!(isAdmin || isROwner || isOwner)) {
-         global.dfail('admin', m, conn);
-         throw false;
-      }}
-      chat.antiArab2 = isEnable;
-      break;
     default:
-      if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, {text: optionsFull}, {quoted: m});
-      throw false;
-  }
-await conn.sendButton(m.chat, `📣 *_COMANDO:_* ${type} 
-📌 *_OPCION:_* ${isEnable ? 'Activado' : 'Desactivado'} 
-🏮 *_PARA:_* ${isAll ? wm : isUser ? '' : 'El bot'}`, wm, null, [[`${isEnable ? 'Desactivar ❌' : 'Activar ✅'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], null, null, null, fkontak)} 
-};
+if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, {text: optionsFull}, {quoted: fkontak});
+throw false;
+}
+await conn.sendButton(m.chat, `📌 *_COMANDO:_* ${type} 
+⚙️ *_OPCION:_* ${isEnable ? 'Activado' : 'Desactivado'} 
+📡 *_PARA:_* ${isAll ? wm : isUser ? '' : 'El bot'}`, wm, null, [[`${isEnable ? 'Apagar' : 'Activar'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], ['VOLVER AL MENU', '.allmenu']], null, null, fkontak)} 
+	
 handler.help = ['en', 'dis'].map((v) => v + 'able <option>');
 handler.tags = ['group', 'owner'];
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i;
 export default handler;
+	
