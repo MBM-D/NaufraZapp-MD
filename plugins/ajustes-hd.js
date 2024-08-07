@@ -28,7 +28,7 @@ conn.sendFile(m.chat, This, '', '『✅』Aqui tienes tu foto.', m)
 error = true
 } finally {
 if (error) {
-return conn.reply(m.chat, `『✦』Ocurrio un error al crear la foto.`, m, fpay, )
+return conn.reply(m.chat, `『✦』Ocurrio un error al crear la foto.`, m )
 }
 delete conn.hdr[m.sender]
 }}
