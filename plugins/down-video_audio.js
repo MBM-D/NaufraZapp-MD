@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+/*import fetch from 'node-fetch';
 import axios from 'axios';
 import yts from 'yt-search';
 import {youtubedl, youtubedlv2} from '@bochilteam/scraper';
@@ -150,8 +150,8 @@ const getBuffer = async (url, options) => {
     const res = await axios({method: 'get', url, headers: {'DNT': 1, 'Upgrade-Insecure-Request': 1,}, ...options, responseType: 'arraybuffer'});
     return res.data;
 };
-
-/*import fetch from 'node-fetch';
+*/
+import fetch from 'node-fetch';
 import yts from 'yt-search';
 import ytdl from 'ytdl-core';
 import axios from 'axios';
@@ -370,4 +370,3 @@ const getVideo = await ytMp4(random);
 resolve(getVideo);
 }).catch(reject);
 })}
-*/
