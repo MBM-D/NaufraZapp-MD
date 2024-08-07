@@ -9,10 +9,10 @@ const handler = async (m, {conn, text}) => {
     switch (v.type) {
       case 'video': return `
 🏷️ » *ɴᴏᴍʙʀᴇ:* _${v.title}_
-🌐 » *ᴇɴʟᴀᴄᴇ:* _${v.url}_
-⏰ » *ᴅᴜʀᴀᴄɪᴏɴ:* $_{v.timestamp}_
+🌐 » *ᴇɴʟᴀᴄᴇ:* ${v.url}
+⏰ » *ᴅᴜʀᴀᴄɪᴏɴ:* _${v.timestamp}_
 📆 » *ᴘᴜʙʟɪᴄᴀᴅᴏ ᴇɴ:* _${v.ago}_
-👀 » *ᴠɪsᴛᴀs:* _${v.views}_`;
+👀 » *ᴠɪsᴛᴀs:* ${v.views}`;
     }
   }).filter((v) => v).join('\n\n⋄ •───────────────• ⋄\n\n');
   conn.sendFile(m.chat, tes[0].thumbnail, 'yts.jpeg', teks, m);
