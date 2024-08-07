@@ -54,7 +54,7 @@ global.imgAll = fs.readFileSync('./Menu1.jpg')
 global.naufraAll = 'https://whatsapp.com/channel/0029VaRibRvDuMRj6ozMSN1l'
 global.nzLink = 'https://chat.whatsapp.com/I7A2Q6EXtmE6d7zOxyYF3L'
 global.nzMenus = fs.readFileSync('./Menu2.jpg')
-global.naufraImg = fs.readFileSync('./storage/nz4.jpg')
+global.naufraImg = 'https://telegra.ph/file/4c4de4fbd4b87fc6c397d.jpg'
 	
 //Imagenes
 global.imagen1 = 'https://telegra.ph/file/4c4de4fbd4b87fc6c397d.jpg'
