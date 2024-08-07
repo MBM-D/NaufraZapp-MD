@@ -15,7 +15,7 @@ const handler = async (m, {conn, text, usedPrefix}) => {
 
 𝗘𝗦𝗧𝗔𝗗𝗢 • ${result.status.toUpperCase().replace(/\_/g, ' ')}
 
-𝗘𝗣𝗜𝗦𝗢𝗗𝗜𝗢𝗦 • totales:* ${result.episodes}
+𝗘𝗣𝗜𝗦𝗢𝗗𝗜𝗢𝗦 • ${result.episodes}
 
 𝗗𝗨𝗥𝗔𝗖𝗜𝗢𝗡 • *${result.duration}*
 
