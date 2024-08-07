@@ -77,12 +77,12 @@ global.imagen16 = fs.readFileSync('./imagenes/naufra13.jpg')
 global.nzImg1 = fs.readFileSync('./Menu1.jpg')
 global.nzImg2 = fs.readFileSync('./Menu2.jpg')
 
-global.nz1 = fs.readFileSync('./storage/nz.jpg')
-global.nz2 = fs.readFileSync('./storage/nz2.jpg')
-global.nz3 = fs.readFileSync('./storage/nz3.jpg')
-global.nz4 = fs.readFileSync('./storage/nz4.jpg')
-global.nz5 = fs.readFileSync('./storage/nz5.jpg')
-global.nz6 = fs.readFileSync('./storage/nz6.jpg')
+global.nz1 = 'https://i.postimg.cc/j5T9x8L4/f0304022-da50-4a0a-8be4-6b4138bab3af.jpg'
+global.nz2 = 'https://i.postimg.cc/8zq93kG3/c9737e9e-4e19-4f75-95d3-e56c746fb97e.jpg'
+global.nz3 = 'https://i.postimg.cc/GtK1wWKD/db93517c-0588-4a1b-b9a7-641b235597ad.jpg'
+global.nz4 = 'https://i.postimg.cc/cLb0JNSM/474106d3-382b-4964-af1e-fbfb35d495cd.jpg'
+global.nz5 = 'https://i.postimg.cc/PqvxZdBD/06efe094-8f28-444e-b3d4-7474a9ee7f3e.jpg'
+global.nz6 = 'https://i.postimg.cc/MTjTwpfQ/3f77dcb2-f688-4720-ab08-2c41a86c5216.jpg'
 
 global.img = 'https://i.postimg.cc/Y9t2mzvt/Menu2.jpg'
 global.img1 = 'https://i.postimg.cc/T386DJsB/Menu3.jpg'
