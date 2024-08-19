@@ -19,7 +19,7 @@ apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 
 ```bash
-git clone https://github.com/MultiBot-OFC/NaufraZapp-MD && cd NaufraZapp-MD
+git clone https://github.com/MBM-D/NaufraZapp-MD && cd NaufraZapp-MD
 ```
 
 ```bash
@@ -49,7 +49,7 @@ Si después de instalar el bot en Termux se detiene (pantalla en blanco, pérdid
 > Copia los códigos uno por uno, no los pegues todos juntos a la vez.
 
 ```bash
-git clone https://github.com/MultiBot-OFC/NaufraZapp-MD && cd NaufraZapp-MD && yarn install && npm install
+git clone https://github.com/MBM-D/NaufraZapp-MD && cd NaufraZapp-MD && yarn install && npm install
 ```
 
 ```bash
