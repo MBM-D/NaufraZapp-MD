@@ -8,31 +8,31 @@ import axios from 'axios';
 import moment from 'moment-timezone'
 
 global.owner = [ //OWNERS
-["5493873232212", '𝙉𝙖𝙪𝙛𝙧𝙖𝙕𝙖𝙥𝙥-𝙈𝘿', true], 
-["573108625104"],
-["34626817680"],
-["5493873232221"],
-["523142183828"],
-["51918534156"],
-["527421168105"],
-["5491125655633"],
-["51929838430"],
-["529982464299"],
-["51921207166"],
-["5491125730852"],
-["5491133980551"]]
+["5350073109", '𝙉𝙖𝙪𝙛𝙧𝙖𝙕𝙖𝙥𝙥-𝙈𝘿', true], 
+["5350073109"],
+["5350073109"],
+["5350073109"],
+["5350073109"],
+["5350073109"],
+["5350073109"],
+["5350073109"],
+["5350073109"],
+["5350073109"],
+["5350073109"],
+["5350073109"],
+["5350073109"]]
 
 global.botNumberCode = ''
 global.confirmCode = ''
 
-global.suittag = ['5493873232212']
+global.suittag = ['5350073109']
 global.mods = []
 global.prems = []
 
 
-global.isdev = [['5493873232212'],
-['5493873232221'],
-['51929838430']]
+global.isdev = [['5350073109'],
+['5350073109'],
+['5350073109']]
 
 
 global.packname = '𝙉𝘢𝘶𝘧𝘳𝘢𝙕𝘢𝘱𝘱-𝙈𝘋'
@@ -48,7 +48,7 @@ global.baileys = '@whiskeysockets/baileys'
 global.lenguaje = 'Español'
 global.menudi = ['⛶','❏','⫹⫺']
 global.dev = '✯ Naufrago ✯'
-global.devnum = '+54 9 3873 23-2212'
+global.devnum = '+5350073109'
 
 global.imgAll = fs.readFileSync('./Menu1.jpg')
 global.naufraAll = 'https://whatsapp.com/channel/0029VaRibRvDuMRj6ozMSN1l'
